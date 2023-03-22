@@ -62,9 +62,9 @@ https://www.mongodb.com/docs/manual/tutorial/query-documents/
 
 ### MongoDB package name
              <dependency>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-data-mongodb</artifactId>
-                </dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-data-mongodb</artifactId>
+             </dependency>
 
 ### MongoDB in spring boot
 https://docs.spring.io/spring-data/mongodb/docs/current/reference/html/#repositories
