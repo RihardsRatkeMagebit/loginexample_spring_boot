@@ -27,6 +27,14 @@ https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller
 -  src/main/java/com/example/demo/controller/Customer.java
 -  src/main/java/com/example/demo/controller/Index.java
 
+### Models:
+#### Examples
+-  src/main/java/com/example/demo/model/Customer.java
+
+### Views:
+### ALL VIEWS MUST BE HANDLED IN REACT
+
+
 ## Maven
 Getting starter guide
 https://maven.apache.org/guides/getting-started/
