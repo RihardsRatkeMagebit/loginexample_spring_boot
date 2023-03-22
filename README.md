@@ -1,19 +1,23 @@
 # Spring boot learning course
 __Getting Started__:https://spring.io/guides/gs/spring-boot/
 
-
+---
 ## Requirements
 __Build tool__: Maven
 
-__Jave version__: 19
+__Jave version__: 19, 17, 11
+
+__Spring Boot version__: 3.0.x
 
 __Database__ MongoDB
 
 __API platform__ Postman
 
+---
 ## Annotations
 https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/bind/annotation/package-summary.html
 
+---
 ## MVC Patter (Model, View, Controller)
 https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller
 - __Model__ responsible for representing Object/Resource
@@ -32,20 +36,36 @@ https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller
 -  src/main/java/com/example/demo/model/Customer.java
 
 ### Views:
-### ALL VIEWS MUST BE HANDLED IN REACT
+#### ALL VIEWS MUST BE HANDLED IN REACT
 
+---
 
 ## Maven
 Getting starter guide
 https://maven.apache.org/guides/getting-started/
 
+---
 ## Postman
 Tool widely used to debugging and developing APIs worldwide
 https://www.postman.com/downloads/
+---
 
 ## MongoDB
 __MongoDB__
 https://www.mongodb.com/what-is-mongodb
+
+### MongoDB query
+https://www.mongodb.com/docs/manual/tutorial/query-documents/
+
+### MongoDB package name
+             <dependency>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-data-mongodb</artifactId>
+                </dependency>
+
+### MongoDB in spring boot
+https://docs.spring.io/spring-data/mongodb/docs/current/reference/html/#repositories
+
 
 ### Server installation:
 
