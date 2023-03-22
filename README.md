@@ -1,0 +1,50 @@
+# Spring boot learning course
+__Getting Started__:https://spring.io/guides/gs/spring-boot/
+
+
+## Requirements
+__Build tool__: Maven
+
+__Jave version__: 19
+
+__Database__ MongoDB
+
+__API platform__ Postman
+
+## Annotations
+https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/bind/annotation/package-summary.html
+
+## MVC Patter (Model, View, Controller)
+https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller
+- __Model__ responsible for representing Object/Resource
+- __Controller__ Accepts input and converts it to commands for the model or view
+- __View__ Representing data in a view
+
+### Controller:
+#### Examples
+-  src/main/java/com/example/demo/controller/BasicController.java
+-  src/main/java/com/example/demo/controller/Calculator.java
+-  src/main/java/com/example/demo/controller/Customer.java
+-  src/main/java/com/example/demo/controller/Index.java
+
+## Maven
+Getting starter guide
+https://maven.apache.org/guides/getting-started/
+
+## Postman
+Tool widely used to debugging and developing APIs worldwide
+https://www.postman.com/downloads/
+
+## MongoDB
+__MongoDB__
+https://www.mongodb.com/what-is-mongodb
+
+### Server installation:
+
+__Windows__: https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-windows/
+
+__MacOS__: https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/
+
+__MongoDB compass__: UI client for managing mongoDB
+https://www.mongodb.com/try/download/compass 
+
