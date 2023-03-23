@@ -17,8 +17,23 @@ __API platform__ Postman
 ## Annotations
 https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/bind/annotation/package-summary.html
 
+Example notations:
+__@RestController__
+__@RequestMapping__
+
+Lombok annotations:
+https://projectlombok.org/api/lombok/package-summary
+
+## IntelliJ fix lombok annotations
+https://www.baeldung.com/lombok-ide
+
+
 
 ## Application configuration
+Responsible for all apllication configurations, ports, mongodb etc..
+
+__Location__:src/main/resources/application.properties
+
 https://www.javatpoint.com/spring-boot-properties
 
 ---
@@ -35,12 +50,31 @@ https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller
 -  src/main/java/com/example/demo/controller/Customer.java
 -  src/main/java/com/example/demo/controller/Index.java
 
+###### More advanced examples:
+
+- src/main/java/com/example/demo/controller/BookController.java
+
 ### Models:
 #### Examples
 -  src/main/java/com/example/demo/model/Customer.java
+###### More advanced examples:
+-  src/main/java/com/example/demo/model/Book.java
 
 ### Views:
 #### ALL VIEWS MUST BE HANDLED IN REACT
+
+---
+
+### Services and Repositories
+__Repositories__: The repository is a gateway between your domain/business layer and a data mapping layer, which is the layer that accesses the database and does the operations.
+
+__Service__: The service should provide an API to your business logic.
+
+#### Book example
+- src/main/java/com/example/demo/service/BookService.java
+- src/main/java/com/example/demo/model/repository/BookRepository.java
+- src/main/java/com/example/demo/service/BookServiceInterface.java
+- src/main/java/com/example/demo/controller/BookController.java
 
 ---
 

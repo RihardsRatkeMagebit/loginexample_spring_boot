@@ -14,12 +14,16 @@ class BookController {
     @Autowired
     BookService bookService;
 
+    // GET http://localhost:8080/book/list
+    // screenShots/PostMan/Controllers/advanced_blog_list.png
     @GetMapping("list")
     public List<Book> list() {
         return bookService.getAll();
     }
 
 
+    // POST http://localhost:8080/book/add
+    // screenShots/PostMan/Controllers/advanced_blog_add.png
     // Example without DTO (Data Transfer Object)
     @PostMapping("add")
     public boolean add(
