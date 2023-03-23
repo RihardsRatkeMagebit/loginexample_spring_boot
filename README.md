@@ -78,9 +78,14 @@ __Service__: The service should provide an API to your business logic.
 
 ---
 
+### DTO (Data Transfer Object)
+https://www.baeldung.com/java-dto-pattern
+
+--- 
+
 ## Maven
 Getting starter guide
-https://maven.apache.org/guides/getting-started/
+- https://maven.apache.org/guides/getting-started/
 
 ---
 
