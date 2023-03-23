@@ -17,6 +17,10 @@ __API platform__ Postman
 ## Annotations
 https://docs.spring.io/spring-framework/docs/current/javadoc-api/org/springframework/web/bind/annotation/package-summary.html
 
+
+## Application configuration
+https://www.javatpoint.com/spring-boot-properties
+
 ---
 ## MVC Patter (Model, View, Controller)
 https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller
@@ -67,7 +71,7 @@ https://www.mongodb.com/docs/manual/tutorial/query-documents/
              </dependency>
 
 ### MongoDB in spring boot
-https://docs.spring.io/spring-data/mongodb/docs/current/reference/html/#repositories
+https://www.mongodb.com/compatibility/spring-boot
 
 
 ### Server installation:

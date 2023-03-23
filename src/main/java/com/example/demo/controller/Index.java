@@ -16,7 +16,7 @@ public class Index {
     }
 
     @GetMapping("blog")
-    public String blog(@RequestParam(name="id", required = false) String id) {
+    public String blog(@RequestParam(name = "id", required = false) String id) {
         return "your tried to visit blog #" + id;
     }
 

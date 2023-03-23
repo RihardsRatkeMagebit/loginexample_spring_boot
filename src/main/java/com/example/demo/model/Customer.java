@@ -2,6 +2,7 @@ package com.example.demo.model;
 
 import java.io.Serializable;
 
+// Non-MongoDB implementation
 public class Customer implements Serializable {
 
     private String name;
