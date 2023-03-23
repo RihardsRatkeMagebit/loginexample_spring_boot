@@ -32,7 +32,7 @@ class BookController {
             @RequestParam(name = "price", required = false) double price
     ) {
         Book book = new Book();
-        // Spring-boot doesn't support mongod DB auto generation ids
+        // Spring-boot doesn't support mongoDB auto generation ids
         // Simple example to generate ID, not best practice, just example
         Integer Id = (int) Math.floor(Math.random() * (10000000 - 1 + 1) + 1);
         book.setId(Id);
