@@ -76,6 +76,14 @@ __Service__: The service should provide an API to your business logic.
 - src/main/java/com/example/demo/service/BookServiceInterface.java
 - src/main/java/com/example/demo/controller/BookController.java
 
+
+#### Currency example
+- src/main/java/com/example/demo/service/CurrencyServiceInterface.java
+- src/main/java/com/example/demo/service/CurrencyService.java
+- src/main/java/com/example/demo/model/Currency.java
+- src/main/java/com/example/demo/model/repository/CurrencyRepository.java
+- src/main/java/com/example/demo/dto/CurrencyDTO.java
+
 ---
 
 ### DTO (Data Transfer Object)
