@@ -28,9 +28,8 @@ https://projectlombok.org/api/lombok/package-summary
 https://www.baeldung.com/lombok-ide
 
 
-
 ## Application configuration
-Responsible for all apllication configurations, ports, mongodb etc..
+Responsible for all application configurations, ports, mongodb etc..
 
 __Location__:src/main/resources/application.properties
 
@@ -75,7 +74,6 @@ __Service__: The service should provide an API to your business logic.
 - src/main/java/com/example/demo/model/repository/BookRepository.java
 - src/main/java/com/example/demo/service/BookServiceInterface.java
 - src/main/java/com/example/demo/controller/BookController.java
-
 
 #### Currency example
 - src/main/java/com/example/demo/service/CurrencyServiceInterface.java
@@ -156,3 +154,9 @@ https://jakarta.ee/specifications/bean-validation/3.0/apidocs/jakarta/validation
             <groupId>jakarta.validation</groupId>
             <artifactId>jakarta.validation-api</artifactId>
         </dependency>
+
+
+### Java Enums
+https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html
+
+
