@@ -145,6 +145,7 @@ https://docs.spring.io/spring-security/reference/getting-spring-security.html
 ### Validation
 
 __Validation module__: jakarta.validation.constraints
+
 https://jakarta.ee/specifications/bean-validation/3.0/apidocs/jakarta/validation/constraints/package-summary.html
 
         <dependency>
