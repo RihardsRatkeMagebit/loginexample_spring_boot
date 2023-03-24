@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4e8883c5-283f-45d2-822e-81251e3bcca6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/screenShots/IntelliJ/Maven/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenShots/IntelliJ/Maven/img.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screenShots/IntelliJ/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenShots/IntelliJ/Maven/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/screenShots/IntelliJ/Maven/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/screenShots/IntelliJ/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/screenShots/IntelliJ/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +60,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "last_opened_file_path": "/home/rihardsratke/Desktop/testa/demo/demo/screenShots/MongoDB/SpringbootConfiguration",
-    "settings.editor.selected.configurable": "project.propCompiler"
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RecentsManager">

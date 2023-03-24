@@ -4,3 +4,7 @@
 
 #### Pro tips:
 - Double pressing shift in both OS will give quick action tab
+
+
+### Useful plugins for spring-boot
+- https://plugins.jetbrains.com/plugin/19835-lombok-builder-helper
