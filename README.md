@@ -132,11 +132,26 @@ https://www.mongodb.com/try/download/compass
 
 ---
 
-### Security 
+### Security
 https://docs.spring.io/spring-security/reference/getting-spring-security.html
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
-            <version>3.0.4</version>
+        </dependency>
+
+--- 
+
+### Validation
+
+__Validation module__: jakarta.validation.constraints
+https://jakarta.ee/specifications/bean-validation/3.0/apidocs/jakarta/validation/constraints/package-summary.html
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-validation</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>jakarta.validation</groupId>
+            <artifactId>jakarta.validation-api</artifactId>
         </dependency>
