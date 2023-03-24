@@ -122,3 +122,13 @@ __MacOS__: https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/
 __MongoDB compass__: UI client for managing mongoDB
 https://www.mongodb.com/try/download/compass 
 
+---
+
+### Security 
+https://docs.spring.io/spring-security/reference/getting-spring-security.html
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+            <version>3.0.4</version>
+        </dependency>
