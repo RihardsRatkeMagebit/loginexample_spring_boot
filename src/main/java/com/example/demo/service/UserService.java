@@ -12,7 +12,7 @@ import java.util.*;
 public class UserService implements UserServiceInterface {
 
     @Autowired
-    UserRepository userRepository;
+    private UserRepository userRepository;
 
     @Override
     public Optional<User> getUserById(ObjectId id) {

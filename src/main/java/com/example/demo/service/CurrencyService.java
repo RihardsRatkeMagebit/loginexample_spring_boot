@@ -11,7 +11,7 @@ import java.util.Optional;
 public class CurrencyService implements CurrencyServiceInterface
 {
     @Autowired
-    CurrencyRepository currencyRepository;
+    private CurrencyRepository currencyRepository;
     @Override
     public Currency saveCurrency(Currency currency) {
         currencyRepository.save(currency);

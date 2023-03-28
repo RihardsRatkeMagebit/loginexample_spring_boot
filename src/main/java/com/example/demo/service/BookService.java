@@ -12,7 +12,7 @@ import java.util.Optional;
 @Service
 public class BookService implements BookServiceInterface {
     @Autowired
-    BookRepository bookRepository;
+    private BookRepository bookRepository;
 
     @Override
     public Book addBook(Book book) {
