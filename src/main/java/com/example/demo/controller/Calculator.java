@@ -12,8 +12,8 @@ public class Calculator {
 
     // Basic addition GET calculator
     // http://localhost:8080/calculator/?a=10&b=3
-    // Result 13
-    @GetMapping("add")
+    // http://localhost:8080/calculator
+
     public Integer add(
             @RequestParam(name = "a", defaultValue = "0") Integer a,
             @RequestParam(name = "b", defaultValue = "0") Integer b
