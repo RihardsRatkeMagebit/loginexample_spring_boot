@@ -90,10 +90,13 @@ https://www.baeldung.com/java-dto-pattern
 ---
 
 ### Application layers
-Presentation layer — The view part of the MVC framework that handles the front-end.
-Business layer — The controller where all the business logic and validations are done.
-Persistence layer — This layer translates the business objects to database objects.
-Database layer — The actual CRUD (Create, Read, Update, Delete) operations happen here.
+__Presentation layer__ The view part of the MVC framework that handles the front-end.
+
+__Business layer__ The controller where all the business logic and validations are done.
+
+__Persistence layer__ This layer translates the business objects to database objects.
+
+__Database layer__ The actual CRUD (Create, Read, Update, Delete) operations happen here.
 ---
 
 ## Maven
