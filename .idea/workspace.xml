@@ -5,25 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4e8883c5-283f-45d2-822e-81251e3bcca6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/complex_examples/example/Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complex_examples/example/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complex_examples/example/dto/UserDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complex_examples/example/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complex_examples/example/model/repository/UserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complex_examples/example/response/GenericResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complex_examples/example/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/complex_examples/example/service/UserServiceInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/repository/BookRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/model/repository/BookRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/repository/CurrencyRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/model/repository/CurrencyRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/model/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/model/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/service/BookService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/service/BookService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/service/CurrencyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/service/CurrencyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/demo/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/demo/service/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

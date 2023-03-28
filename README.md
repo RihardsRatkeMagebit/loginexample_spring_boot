@@ -97,6 +97,8 @@ __Business layer__ The controller where all the business logic and validations a
 __Persistence layer__ This layer translates the business objects to database objects.
 
 __Database layer__ The actual CRUD (Create, Read, Update, Delete) operations happen here.
+
+
 ---
 
 ## Maven
