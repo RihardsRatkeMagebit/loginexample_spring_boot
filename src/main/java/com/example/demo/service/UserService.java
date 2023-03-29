@@ -1,9 +1,13 @@
 package com.example.demo.service;
 
+import com.example.demo.model.FilterClass;
 import com.example.demo.model.User;
 import com.example.demo.model.repository.UserRepository;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -13,6 +17,9 @@ public class UserService implements UserServiceInterface {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private MongoTemplate mongoTemplate;
 
     @Override
     public Optional<User> getUserById(ObjectId id) {
@@ -24,20 +31,21 @@ public class UserService implements UserServiceInterface {
     // User 2 bob option111
     @Override
     public User addUser(User user) {
-        List<User> users = userRepository.findAll();
-        for (User userDB : users) {
-            if (userDB.getUsername() == user.getUsername()) {
-                throw new RuntimeException("Users already exist");
-            }
+        Query query = new Query();
+        query.addCriteria(Criteria.where("username").is(user));
+        User dbUser = mongoTemplate.findOne(query,User.class);
+
+        if (dbUser != null){
+            throw new RuntimeException("User already exist");
         }
 
-        return userRepository.save(user);
+        return mongoTemplate.findOne(query,User.class);
     }
 
     @Override
     public List<User> listUser(int limit) {
         List<User> users = userRepository.findAll();
-        List<User> result = users.subList(0,Math.min(users.size(),limit));
+        List<User> result = users.subList(0, Math.min(users.size(), limit));
         return result;
     }
 
@@ -45,8 +53,8 @@ public class UserService implements UserServiceInterface {
     public List<User> sortUsers(boolean desc) {
         List<User> users = userRepository.findAll();
         Collections.sort(users);
-        if (desc){
-            Collections.sort(users,Collections.reverseOrder());
+        if (desc) {
+            Collections.sort(users, Collections.reverseOrder());
         }
         return users;
     }
@@ -54,19 +62,34 @@ public class UserService implements UserServiceInterface {
     @Override
     public List<User> searchForUsers(String filter) {
         List<User> users = userRepository.findAll();
-        List<User> result = new ArrayList<User>();
-        for (User user: users){
-            if (user.getUsername().contains(filter)){
-                result.add(user);
-            }
-        }
+        Query query = new Query();
+        query.addCriteria(Criteria.where("username").is(filter));
+        List<User> user = mongoTemplate.find(query, User.class);
 
-        return result;
+        return user;
+    }
+
+
+    public List<User> search(List<FilterClass> filters){
+        Query query = new Query();
+
+        filters.forEach(filterClass -> {
+            Criteria criteria = Criteria.where(filterClass.field);
+            if (filterClass.reqType.equals(FilterClass.type.EQ)) {
+                criteria.is(filterClass.value);
+            } else if (filterClass.reqType.equals(FilterClass.type.GT)) {
+                criteria.gt(filterClass.value);
+            } else {
+                criteria.is(filterClass.value);
+            }
+            query.addCriteria(criteria);
+        });
+        return mongoTemplate.find(query,User.class);
     }
 
     @Override
     public void addListOfUsers(List<User> listofUser) {
-        for (User user: listofUser){
+        for (User user : listofUser) {
             this.addUser(user);
         }
     }

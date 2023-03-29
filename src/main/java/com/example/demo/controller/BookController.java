@@ -1,11 +1,13 @@
 package com.example.demo.controller;
 
 import com.example.demo.dto.BookDTO;
+import com.example.demo.model.Author;
 import com.example.demo.model.Book;
 import com.example.demo.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
@@ -18,8 +20,14 @@ class BookController {
     // GET http://localhost:8080/book/list
     // screenShots/PostMan/Controllers/advanced_blog_list.png
     @GetMapping("list")
-    public List<Book> list() {
-        return bookService.getAll();
+    public List<BookDTO> list() {
+       List<Book> bookList = bookService.getAll();
+       List<BookDTO> result = new ArrayList<BookDTO>();
+       for(Book book: bookList){
+           BookDTO bookDTO = new BookDTO().convert(book);
+           result.add(bookDTO) ;
+       }
+       return result;
     }
 
 
@@ -39,7 +47,9 @@ class BookController {
         book.setId(Id);
         book.setCost(price);
         book.setTitle(title);
-        book.setAuthor(author);
+
+
+        book.setAuthor(new Author());
 
         bookService.addBook(book);
         return true;
@@ -56,7 +66,9 @@ class BookController {
         Integer Id = (int) Math.floor(Math.random() * (10000000 - 1 + 1) + 1);
         book.setId(Id);
         book.setTitle(bookInput.title);
-        book.setAuthor(bookInput.author);
+        Author author = new Author();
+        author.setName(bookInput.author);
+        book.setAuthor(author);
         book.setCost(bookInput.cost);
 
         bookService.addBook(book);

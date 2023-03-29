@@ -22,8 +22,10 @@ public class Book {
     public static final String SEQUENCE_NAME = "book_sequence";
 
     private String title;
-    private String author;
 
     @Field(name = "price")
+
     private double cost;
+
+    private Author author;
 }
