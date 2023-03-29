@@ -11,9 +11,10 @@ import java.util.Arrays;
 public class Calculator {
 
     // Basic addition GET calculator
-    // http://localhost:8080/calculator/?a=10&b=3
+    // http://localhost:8080/calculator/add?a=10&b=3
     // http://localhost:8080/calculator
 
+    @GetMapping("add")
     public Integer add(
             @RequestParam(name = "a", defaultValue = "0") Integer a,
             @RequestParam(name = "b", defaultValue = "0") Integer b
