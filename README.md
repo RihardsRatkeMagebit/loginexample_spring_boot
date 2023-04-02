@@ -171,4 +171,8 @@ https://jakarta.ee/specifications/bean-validation/3.0/apidocs/jakarta/validation
 ### Java Enums
 https://docs.oracle.com/javase/tutorial/java/javaOO/enum.html
 
+### Spring-boot Bean
+https://www.baeldung.com/spring-bean
+
+
 
