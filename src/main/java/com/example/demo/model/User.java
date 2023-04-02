@@ -2,6 +2,7 @@ package com.example.demo.model;
 
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import lombok.Builder;
 import lombok.Data;
 import org.bson.types.ObjectId;
 import lombok.NoArgsConstructor;
@@ -22,6 +23,7 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 @Document("users")
 public class User implements UserDetails {
     public static final String FIELD_USERNAME = "username";

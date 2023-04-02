@@ -4,10 +4,9 @@ import com.example.demo.model.User;
 import lombok.*;
 
 @NoArgsConstructor
-@Getter
-@Setter
 @AllArgsConstructor
 @ToString
+@Data
 public class UserDTO {
     public String username;
     public String password;
@@ -25,3 +24,4 @@ public class UserDTO {
         return this;
     }
 }
+

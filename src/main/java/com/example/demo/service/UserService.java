@@ -12,8 +12,6 @@ import java.util.List;
 
 @Service
 public class UserService implements UserServiceInterface {
-
-
     @Autowired
     private UserRepository userRepository;
 
