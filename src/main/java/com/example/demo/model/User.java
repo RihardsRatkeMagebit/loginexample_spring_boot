@@ -1,34 +1,75 @@
 package com.example.demo.model;
 
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import lombok.Data;
+import org.bson.types.ObjectId;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
+import java.util.Collection;
+import java.util.List;
 
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
-@Document("user")
-public class User implements Comparable<User> {
+@Document("users")
+public class User implements UserDetails {
+    public static final String FIELD_USERNAME = "username";
+    public static final String FIELD_PASSWORD = "password";
 
     @Id
-    ObjectId id;
+    public ObjectId id;
 
-    @Max(20)
-    @Min(2)
-    String username;
-
+    @Min(value = 2, message = "Min char must be at-least 2")
+    @Max(value = 20, message = "Max char limit is 20")
     @Indexed(unique = true)
-    String password;
+    public String username;
+
+    @Min(1)
+    @Max(30)
+    public String password;
+
+    @Field(name = "is_active")
+    public boolean isActive;
+
+    @Field(name = "failed_attempt_counter")
+    public int failedAttempts;
+
+    @Enumerated(EnumType.STRING)
+    private Role role;
 
     @Override
-    public int compareTo(User user) {
-        return username.compareTo(user.username);
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return List.of(new SimpleGrantedAuthority(role.name()));
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
     }
 }

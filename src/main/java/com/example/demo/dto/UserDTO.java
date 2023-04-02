@@ -1,8 +1,27 @@
 package com.example.demo.dto;
 
-public class UserDTO {
-    String username;
-    String password;
+import com.example.demo.model.User;
+import lombok.*;
 
-    long id;
+@NoArgsConstructor
+@Getter
+@Setter
+@AllArgsConstructor
+@ToString
+public class UserDTO {
+    public String username;
+    public String password;
+
+    /**
+     * Converts User into UserDTO
+     *
+     * @param user
+     * @return self
+     */
+    public UserDTO convert(User user) {
+        this.setUsername(user.getUsername());
+        this.setPassword("********");
+
+        return this;
+    }
 }
