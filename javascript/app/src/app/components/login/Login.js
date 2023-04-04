@@ -1,10 +1,13 @@
 import { useState } from "react"
+import { useNavigate } from "react-router-dom";
 import './Login.css';
 
 export function Login() {
     let [username, setUsername] = useState();
     let [password, setPassword] = useState();
     let [message, setMessage] = useState();
+
+    const navigate = useNavigate();
 
     const handleUsernameField = (e) => {
         setUsername(e.target.value)
@@ -18,6 +21,15 @@ export function Login() {
         let data = {
             username: username,
             password: password
+        }
+
+        if (localStorage.getItem('token')) {
+            navigate('/dashboard')
+        }
+
+        if (!username || !password) {
+            setMessage("Missing login or password field");
+            return;
         }
 
         fetch("http://localhost:8080/api/v1/auth/login", {
@@ -36,6 +48,8 @@ export function Login() {
                 if (data && data.token.length) {
                     setMessage("User logged in");
                     localStorage.setItem("token", data.token)
+                    navigate('/dashboard')
+
                 } else {
                     localStorage.setItem("token", null)
                     setMessage("Something went wrong, check login or password")
