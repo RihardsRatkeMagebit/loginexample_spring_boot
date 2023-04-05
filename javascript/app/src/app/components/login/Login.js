@@ -2,7 +2,7 @@ import { useState } from "react"
 import { useNavigate } from "react-router-dom";
 import './Login.css';
 
-export function Login() {
+export function Login(props) {
     let [username, setUsername] = useState();
     let [password, setPassword] = useState();
     let [message, setMessage] = useState();
@@ -22,6 +22,8 @@ export function Login() {
             username: username,
             password: password
         }
+
+        let usernameData = username;
 
         if (localStorage.getItem('token')) {
             navigate('/dashboard')
@@ -47,7 +49,9 @@ export function Login() {
             response.json().then(data => {
                 if (data && data.token.length) {
                     setMessage("User logged in");
+
                     localStorage.setItem("token", data.token)
+                    props.pullData(usernameData)
                     navigate('/dashboard')
 
                 } else {
