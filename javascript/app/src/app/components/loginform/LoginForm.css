@@ -1,0 +1,10 @@
+.login-wrapper form{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.login-wrapper button{
+    padding: 5px;
+    margin: 15px;
+}

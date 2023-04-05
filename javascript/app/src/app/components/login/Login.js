@@ -51,6 +51,7 @@ export function Login(props) {
                     setMessage("User logged in");
 
                     localStorage.setItem("token", data.token)
+                    localStorage.setItem("username", usernameData)
                     props.pullData(usernameData)
                     navigate('/dashboard')
 
