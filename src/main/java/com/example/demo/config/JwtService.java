@@ -9,17 +9,22 @@ import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.Claims;
 
 import java.util.function.Function;
+
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import io.jsonwebtoken.SignatureAlgorithm;
+import lombok.RequiredArgsConstructor;
+
+import org.springframework.core.env.Environment;
 import org.springframework.stereotype.Service;
 import org.springframework.security.core.userdetails.UserDetails;
 
 @Service
+@RequiredArgsConstructor
 public class JwtService {
-
     private static final Integer DEFAULT_TOKEN_DURATION = 1000 * 60 * 24;
-    private static final String SECRET_KEY = "397A24432646294A404E635266556A586E327234753778214125442A472D4B61";
+
+    private final Environment environment;
 
     public String extractUsername(String jwtToken) {
         return extractClaim(jwtToken, Claims::getSubject);
@@ -72,7 +77,7 @@ public class JwtService {
     }
 
     private Key getSiningKey() {
-        byte[] keyBytes = Decoders.BASE64.decode(SECRET_KEY);
+        byte[] keyBytes = Decoders.BASE64.decode(environment.getProperty("security.encryption_secret"));
 
         return Keys.hmacShaKeyFor(keyBytes);
     }

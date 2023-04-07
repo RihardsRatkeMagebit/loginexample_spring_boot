@@ -38,6 +38,8 @@ public class SecurityConfiguration {
                 .permitAll()
                 .requestMatchers("/api/v1/account/**")
                 .hasRole(Role.SUPER_ADMIN.name())
+                .requestMatchers("/api/v1/user/**")
+                .hasRole(Role.SUPER_ADMIN.name())
                 .anyRequest()
                 .authenticated()
                 .and()

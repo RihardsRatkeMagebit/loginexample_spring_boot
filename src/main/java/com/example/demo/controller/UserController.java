@@ -4,7 +4,7 @@ import com.example.demo.dto.UserDTO;
 import com.example.demo.model.User;
 import com.example.demo.response.GenericResponse;
 import com.example.demo.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -13,11 +13,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("api/v1/user")
 public class UserController {
 
-    @Autowired
-    UserService userService;
+    private final UserService userService;
 
     @GetMapping("list")
     @ResponseBody
@@ -38,7 +38,11 @@ public class UserController {
     }
 
     @GetMapping("getByName")
-    public ResponseEntity<Object> getByName(@RequestParam(name = "username", required = true) String username) {
+    @ResponseBody
+    public ResponseEntity<Object> getByName(
+            @RequestParam(name = "username", required = true)
+            String username
+    ) {
         try {
             User user = userService.getUserByName(username);
             if (user.getUsername().length() == 0) {
