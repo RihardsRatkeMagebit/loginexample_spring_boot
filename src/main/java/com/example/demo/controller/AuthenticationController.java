@@ -2,13 +2,12 @@ package com.example.demo.controller;
 
 import com.example.demo.dto.AuthenticationRequest;
 import com.example.demo.dto.AuthenticationResponse;
+import com.example.demo.service.AuthenticationLoggerService;
 import com.example.demo.service.AuthenticationService;
+import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("api/v1/auth")
@@ -16,11 +15,16 @@ import org.springframework.web.bind.annotation.RestController;
 public class AuthenticationController {
 
     private final AuthenticationService authenticationService;
+    private final AuthenticationLoggerService authenticationLoggerService;
 
     @PostMapping("/login")
+    @ResponseBody
     public ResponseEntity<AuthenticationResponse> register(
-            @RequestBody AuthenticationRequest authenticationRequest
+            @RequestBody AuthenticationRequest authenticationRequest,
+            HttpServletRequest servletRequest
     ) {
+        authenticationLoggerService.log(authenticationRequest, servletRequest);
+
         return ResponseEntity.ok(authenticationService.authenticate(authenticationRequest));
     }
 }

@@ -15,7 +15,7 @@ import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
-public class AccountManagementService {
+public class AccountManagementService implements AccountManagementServiceInterface {
 
     private final UserRepository repository;
     private final PasswordEncoder passwordEncoder;
