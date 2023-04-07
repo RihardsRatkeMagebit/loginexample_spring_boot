@@ -1,13 +1,9 @@
 package com.example.demo.controller;
 
 import com.example.demo.dto.ActivationRequest;
-import com.example.demo.dto.AuthenticationRequest;
-import com.example.demo.dto.AuthenticationResponse;
 import com.example.demo.dto.RegisterRequest;
-import com.example.demo.model.User;
 import com.example.demo.response.GenericResponse;
 import com.example.demo.service.AccountManagementService;
-import com.example.demo.service.AuthenticationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

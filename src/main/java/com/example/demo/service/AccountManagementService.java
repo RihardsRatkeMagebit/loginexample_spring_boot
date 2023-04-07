@@ -20,7 +20,7 @@ public class AccountManagementService {
     private final UserRepository repository;
     private final PasswordEncoder passwordEncoder;
 
-    public Boolean register(RegisterRequest registerRequest) throws UsernameNotFoundException {
+    public void register(RegisterRequest registerRequest) throws UsernameNotFoundException {
         if (repository.findByUsername(registerRequest.getUsername()).isPresent()) {
             throw new UsernameNotFoundException("Username already taken");
         }
@@ -32,11 +32,9 @@ public class AccountManagementService {
         } catch (RuntimeException e) {
             throw new UsernameNotFoundException("User cannot be created");
         }
-
-        return true;
     }
 
-    public Boolean manageIsActive(ActivationRequest activationRequest) throws UsernameNotFoundException {
+    public void manageIsActive(ActivationRequest activationRequest) throws UsernameNotFoundException {
         Optional<User> user = repository.findByUsername(activationRequest.getUsername());
 
         if (user.isEmpty()) {
@@ -51,7 +49,5 @@ public class AccountManagementService {
         } catch (RuntimeException exception) {
             throw new UsernameNotFoundException("Cannot save user");
         }
-
-        return true;
     }
 }

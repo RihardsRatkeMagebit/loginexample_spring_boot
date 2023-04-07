@@ -1,6 +1,8 @@
 package com.example.demo.service;
 
 
+import com.example.demo.dto.TokenValidationRequest;
+import com.example.demo.exception.InvalidTokenDataException;
 import com.example.demo.model.User;
 import lombok.RequiredArgsConstructor;
 import com.example.demo.config.JwtService;
@@ -16,7 +18,6 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class AuthenticationService {
-
     private final UserRepository repository;
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
@@ -39,6 +40,7 @@ public class AuthenticationService {
                 user.setFailedAttempts(failedAttemptCount + 1);
             }
             repository.save(user);
+
             return AuthenticationResponse.builder().build();
         }
 
@@ -56,6 +58,7 @@ public class AuthenticationService {
         return AuthenticationResponse
                 .builder()
                 .token(jwtToken)
+                .role(user.getRole())
                 .build();
     }
 }

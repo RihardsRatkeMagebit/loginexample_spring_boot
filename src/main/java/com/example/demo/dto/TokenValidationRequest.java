@@ -1,16 +1,14 @@
 package com.example.demo.dto;
 
-import com.example.demo.model.Role;
-import lombok.Data;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class AuthenticationResponse {
+public class TokenValidationRequest {
     private String token;
-    private Role role;
 }
