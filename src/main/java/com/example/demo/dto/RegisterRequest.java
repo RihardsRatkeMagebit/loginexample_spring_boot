@@ -19,7 +19,6 @@ public class RegisterRequest {
     @Pattern(regexp = "[a-z]{2,}", message = "Username must be at-least 2 chars long and all lowercase")
     private String username;
 
-
     @NotBlank(message = "password is a required field")
     @Pattern(
             regexp = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$",
