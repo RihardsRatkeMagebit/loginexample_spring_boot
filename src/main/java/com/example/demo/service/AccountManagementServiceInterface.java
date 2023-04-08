@@ -17,5 +17,5 @@ import java.util.Optional;
 public interface AccountManagementServiceInterface {
     public void register(RegisterRequest registerRequest) throws UsernameNotFoundException;
 
-    public void manageIsActive(ActivationRequest activationRequest) throws UsernameNotFoundException;
+    public void manageIsActive(ActivationRequest activationRequest, boolean is_active) throws UsernameNotFoundException;
 }

@@ -13,4 +13,6 @@ import lombok.AllArgsConstructor;
 public class AuthenticationResponse {
     private String token;
     private Role role;
+    private boolean error;
+    private String message;
 }

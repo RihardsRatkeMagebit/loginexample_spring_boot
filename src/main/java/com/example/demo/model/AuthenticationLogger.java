@@ -7,8 +7,6 @@ import lombok.NoArgsConstructor;
 import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import java.util.List;
-
 @NoArgsConstructor
 @Data
 @AllArgsConstructor
@@ -16,8 +14,11 @@ import java.util.List;
 @Document("login_logs")
 public class AuthenticationLogger {
     public ObjectId id;
+
     public String date;
+
     public String headers;
+
     public String username;
 }
 

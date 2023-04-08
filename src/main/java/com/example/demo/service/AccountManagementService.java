@@ -34,7 +34,7 @@ public class AccountManagementService implements AccountManagementServiceInterfa
         }
     }
 
-    public void manageIsActive(ActivationRequest activationRequest) throws UsernameNotFoundException {
+    public void manageIsActive(ActivationRequest activationRequest, boolean is_active) throws UsernameNotFoundException {
         Optional<User> user = repository.findByUsername(activationRequest.getUsername());
 
         if (user.isEmpty()) {
@@ -43,7 +43,7 @@ public class AccountManagementService implements AccountManagementServiceInterfa
 
         try {
             user.ifPresent(loadedUser -> {
-                loadedUser.setActive(activationRequest.is_activate());
+                loadedUser.setActive(is_active);
                 repository.save(loadedUser);
             });
         } catch (RuntimeException exception) {

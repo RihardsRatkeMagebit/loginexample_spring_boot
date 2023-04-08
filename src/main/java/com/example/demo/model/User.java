@@ -2,6 +2,7 @@ package com.example.demo.model;
 
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.validation.constraints.Pattern;
 import lombok.Builder;
 import lombok.Data;
 import org.bson.types.ObjectId;
@@ -28,17 +29,16 @@ import java.util.List;
 public class User implements UserDetails {
     public static final String FIELD_USERNAME = "username";
     public static final String FIELD_PASSWORD = "password";
+    private static final String ROLE_PREFIX = "ROLE_";
 
     @Id
     public ObjectId id;
 
-    @Min(value = 2, message = "Min char must be at-least 2")
-    @Max(value = 20, message = "Max char limit is 20")
+    @Min(value = 2, message = "Username must contain at least 2 characters")
+    @Max(value = 20, message = "Username cannot exceed 20 characters")
     @Indexed(unique = true)
     public String username;
 
-    @Min(1)
-    @Max(30)
     public String password;
 
     @Field(name = "is_active")
@@ -52,7 +52,7 @@ public class User implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return List.of(new SimpleGrantedAuthority(role.name()));
+        return List.of(new SimpleGrantedAuthority(ROLE_PREFIX + role.name()));
     }
 
     @Override

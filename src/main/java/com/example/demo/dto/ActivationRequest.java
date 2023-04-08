@@ -11,5 +11,4 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class ActivationRequest {
     private String username;
-    private boolean is_activate;
 }
