@@ -2,28 +2,27 @@ package com.example.demo.service;
 
 import com.example.demo.model.User;
 import com.example.demo.model.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.query.Criteria;
-import org.springframework.data.mongodb.core.query.Query;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Optional;
 
 @Service
+@RequiredArgsConstructor
 public class UserService implements UserServiceInterface {
-    @Autowired
-    private UserRepository userRepository;
 
-    @Autowired
-    private MongoTemplate mongoTemplate;
+    UserRepository userRepository;
 
     @Override
     public User getUserByName(String name) {
-        Query query = new Query();
-        query.addCriteria(Criteria.where(User.FIELD_USERNAME).is(name));
+        Optional<User> user = userRepository.findByUsername(name);
+        if (user.isEmpty()) {
+            throw new NoSuchElementException("User doesn't exist");
+        }
 
-        return mongoTemplate.findOne(query, User.class);
+        return user.get();
     }
 
     @Override
