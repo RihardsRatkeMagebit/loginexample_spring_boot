@@ -1,6 +1,7 @@
 package com.example.demo.dto;
 
 import com.example.demo.model.User;
+import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
 @NoArgsConstructor
@@ -8,6 +9,7 @@ import lombok.*;
 @ToString
 @Data
 public class UserDTO {
+    @NotBlank(message = "username is required field")
     public String username;
 
     public String password;

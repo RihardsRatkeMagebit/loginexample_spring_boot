@@ -4,19 +4,19 @@ import lombok.*;
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-
-import java.util.List;
+import org.springframework.data.mongodb.core.index.Indexed;
 
 @Data
 @Builder
 @AllArgsConstructor
 @RequiredArgsConstructor
 @Document("release_files")
-public class ReleaseFiles {
+public class ReleaseFile {
     @Id
     ObjectId id;
 
     Enum<OSType> osType;
 
-    List<String> files;
+    @Indexed(unique = true)
+    String filename;
 }

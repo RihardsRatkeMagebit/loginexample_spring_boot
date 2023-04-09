@@ -50,6 +50,7 @@ public class User implements UserDetails {
     @Enumerated(EnumType.STRING)
     private Role role;
 
+    @Indexed(unique = true)
     private String slug;
 
     @Override
