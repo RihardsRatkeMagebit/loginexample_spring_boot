@@ -1,26 +1,22 @@
 import './App.css';
 import { Login } from './app/components/login/Login';
 import { Dashboard } from './app/components/dashboard/Dashboard';
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { LoginForm } from './app/components/loginform/LoginForm';
 
 function App() {
 
-  let[username,setUsername] = useState();
+  let [username, setUsername] = useState("");
 
   const pullUsername = (data => {
     setUsername(data)
   })
 
-  useEffect(()=>{
-    if (localStorage.getItem("username")){
+  useEffect(() => {
+    if (localStorage.getItem("username")) {
       setUsername(localStorage.getItem("username"))
     }
-  })
-
-  
-
+  }, [])
 
   return (
     <div className="App">
@@ -28,7 +24,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Login pullData={pullUsername} />}>
           </Route>
-          <Route path='/dashboard' element={<Dashboard username={username}/>} >
+          <Route path='/dashboard' element={<Dashboard username={username} />} >
           </Route>
         </Routes>
       </header>
